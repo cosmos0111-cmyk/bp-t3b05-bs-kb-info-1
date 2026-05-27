@@ -1,199 +1,314 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>인프라 테크 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: #0d0d0f;
-      color: #ebebeb;
-      font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
-      line-height: 1.6;
-      padding: 32px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발산 노래방 정보 & 가성비 매칭 가이드 - 발산 밤거리 백과사전</title>
+    <meta name="description" content="발산 노래방 정보 마스터! 회식, 모임, 가성비 위주의 발산 노래방 코스 분석 및 실시간 정찰제 견적 가이드를 제공합니다.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: hsl(150, 100%, 40%);
+            --secondary: hsl(45, 100%, 50%);
+            --dark: hsl(160, 20%, 6%);
+            --card-bg: hsl(160, 20%, 11%);
+            --text: hsl(0, 0%, 93%);
+            --text-muted: hsl(160, 10%, 65%);
+            --border: hsl(150, 30%, 15%);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            line-height: 1.7;
+            padding-bottom: 60px;
+        }
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--card-bg));
+            border-bottom: 2px solid var(--border);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        .hero {
+            background: radial-gradient(circle at center, hsl(150, 40%, 10%), var(--dark));
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0, 200, 100, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 200, 100, 0.5);
+        }
+        .main-content {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .intro-section {
+            margin-bottom: 50px;
+        }
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+        .intro-section p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .reviews-section {
+            margin: 60px 0;
+            background: linear-gradient(135deg, var(--card-bg), var(--dark));
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+        .reviews-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .review-card {
+            background-color: var(--dark);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 12px 12px 0;
+        }
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .review-author {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        .info-bar {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            padding: 20px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            border-radius: 12px;
+            margin: 50px 0;
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .info-bar a {
+            color: #000;
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #030805;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        footer p {
+            margin-bottom: 10px;
+        }
+        footer strong {
+            color: var(--text);
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "발산 노래방 정보 센터",
+      "description": "발산 지역 노래방, 룸싸롱, 회식 및 밤문화 가성비 1등 솔직 상세 후기 제공.",
+      "telephone": "010-6279-0862",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "강서구 발산역",
+        "addressCountry": "KR"
+      },
+      "priceRange": "$$"
     }
-    .wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-    .brand {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: -0.05em;
-    }
-    nav { display: flex; gap: 24px; }
-    nav a {
-      color: #888888;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    nav a:hover { color: #f43f5e; }
-    main { margin-bottom: 80px; }
-    .label {
-      font-size: 0.75rem;
-      font-family: monospace;
-      color: #f43f5e;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .article-body {
-      font-size: 1.15rem;
-      color: #cccccc;
-      font-weight: 400;
-      max-width: 780px;
-    }
-    .article-body p { margin-bottom: 24px; }
-    .juice-link {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: inset 0 -6px 0 #f43f5e;
-      transition: all 0.15s ease-in-out;
-    }
-    .juice-link:hover {
-      box-shadow: inset 0 -24px 0 #f43f5e;
-      color: #ffffff;
-    }
-    .archive-section {
-      margin-top: 80px;
-    }
-    .section-title {
-      font-size: 1rem;
-      font-family: monospace;
-      color: #888888;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 32px;
-    }
-    .archive-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .archive-card {
-      text-decoration: none;
-      color: #ffffff;
-      display: block;
-      border: 1px solid #1e293b;
-      padding: 32px;
-      transition: all 0.2s ease;
-    }
-    .archive-card:hover {
-      border-color: #f43f5e;
-      background-color: #0f172a;
-    }
-    .archive-card h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .archive-card p {
-      color: #888888;
-      font-size: 0.95rem;
-    }
-    footer {
-      border-top: 1px solid #1e293b;
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-family: monospace;
-      color: #475569;
-    }
-    footer a { color: #475569; text-decoration: none; }
-    footer a:hover { color: #f43f5e; }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 20px; align-items: flex-start; }
-      h1 { font-size: 2.2rem; }
-      .archive-card { padding: 20px; }
-      .archive-card h3 { font-size: 1.2rem; }
-    }
-  </style>
+    </script>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="/" class="brand">STREET.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="label">// BRUTALIST GRID SYSTEM</div>
-      <h1>인프라 테크 지식 저널 및 아카이브</h1>
-      <div class="article-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>인프라 테크</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="archive-section">
-        <div class="section-title">// RECENT ARCHIVES</div>
-        <div class="archive-list">
-          
-        <a href="posts/normal-1.html" class="archive-card">
-          <h3>메일 인프라 신뢰 확보를 위한 DMARC(Domain-based Message Authentication) 거부 정책 설정 시기</h3>
-          <p>새로 웜업을 진행하는 도메인의 수신율과 보안 도달 평판을 극대화하기 위해, SPF와 DKIM 인증 결과 기반의 DMARC 규약을 초기 단순 모니터링 수준에서 메일 수신 서버들이 미...</p>
-        </a>
-      
 
-        <a href="posts/normal-2.html" class="archive-card">
-          <h3>리눅스 클라우드 VPS(가상 서버) systemd-journald 메모리 힙 누수 및 로그 디스크 포화 제어 기법</h3>
-          <p>한정된 자원으로 초경량 고성능 웹 서버를 운영할 때, 실시간 커널 로그가 무제한 적재되어 디스크 공간 부족으로 전체 프로세스가 락되는 파멸적 재앙을 미연에 방지하기 위해 `/etc...</p>
-        </a>
-      
+<header>
+    <div class="header-container">
+        <div class="logo">Balsan Center</div>
+        <nav>
+            <a href="index.html">홈</a>
+            <a href="about.html">소개</a>
+        </nav>
+    </div>
+</header>
 
-        <a href="posts/normal-3.html" class="archive-card">
-          <h3>TCP 윈도우 스케일링(Window Scaling) 활성화 시 노후화된 게이트웨이 장비의 패킷 드롭 원인 추적</h3>
-          <p>원거리 대용량 데이터 전송 성능을 극대화하는 TCP 윈도우 스케일 팩터 옵션을 커널 수준에서 적용했을 때, 도중에 위치한 오래된 하드웨어 방화벽들이 이를 비정상 버스트 트래픽으로 ...</p>
-        </a>
-      
+<section class="hero">
+    <h1>발산 노래방 정보 <span>눈탱이 사절 가이드</span></h1>
+    <p>어설픈 정보에 지친 강서구 직장인 형들을 위한 정찰제 노래방 분석! 회식/모임/데이트 2차 해결 완료.</p>
+    <a href="tel:010-6279-0862" class="cta-btn">실시간 발산 노래방 문의: 010-6279-0862</a>
+</section>
 
-        <a href="posts/juice-1.html" class="archive-card">
-          <h3>네트워크 인프라 엔지니어를 위한 화곡 셔츠룸 트러블슈팅 기술 리포트</h3>
-          <p>표준 네트워크 통신 규약의 미세 튜닝과 메모리 힙 리소스를 정밀 제어하며 대량 서버 도달 평판의 균형점을 맞추어나가는 지적인 인프라 전문가분들이라면, 머리 아픈 커널 최적화 점검을...</p>
-        </a>
-      
+<div class="main-content">
+    <section class="intro-section">
+        <h2>발산역 밤거리에서 가성비 있게 2차 뚫는 전략</h2>
+        <p>반갑다 강서구 브로들! 발산역이나 마곡지구 근처에서 회식하고 2차로 노래방이나 룸 계열 찾을 때 어디 갈지 갈팡질팡하지 않았어? 요즘 이 동네 인프라가 워낙 삐까뻔쩍하게 올라가면서 업소들도 미친 듯이 늘어났잖아. 근데 문제는 뭐냐? 다들 지가 제일 저렴하고 서비스 좋다고 광고하는데, 정작 들어가 보면 술 몇 병에 눈 튀어나오는 청구서를 들이미는 쓰레기 업소들이 꽤나 많다는 사실이야.</p>
+        <p>그래서 강서구 바닥에서 7년 동안 뒹굴며 단골 업소 개척한 내가 진짜 알짜배기 정찰제 정보만 엄선해서 형들한테 전달해주려 해. 술도 기분 좋게 취했는데 2차에서 기분 잡치면 안 되잖아. 우리가 제공하는 발산 노래방 정보는 단 1%의 바이럴 광고도 섞이지 않은 팩트 기반이니까 안심하고 믿고 타면 된다.</p>
+    </section>
 
-        <a href="posts/juice-2.html" class="archive-card">
-          <h3>네트워크 인프라 엔지니어를 위한 화곡 셔츠룸 트러블슈팅 기술 리포트</h3>
-          <p>표준 네트워크 통신 규약의 미세 튜닝과 메모리 힙 리소스를 정밀 제어하며 대량 서버 도달 평판의 균형점을 맞추어나가는 지적인 인프라 전문가분들이라면, 머리 아픈 커널 최적화 점검을...</p>
-        </a>
-      
+    <div class="info-bar">
+        ⚡ 발산 노래방 실시간 정찰제 견적 & 예약: <a href="tel:010-6279-0862">010-6279-0862</a> (부장 직통)
+    </div>
+
+    <section class="intro-section">
+        <h2>형들의 성향별 발산역 노래방 매칭 테이블</h2>
+        <p>노래방이라고 다 같은 노래방이 아냐. 누구랑 왔는지, 목적이 뭔지에 따라 확실히 동선을 다르게 짜야 돈 아끼고 칭찬 듣는 법이지. 아래 가성비 코스 3종 바로 체크해봐.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h3>1. 깔끔한 패밀리/커플형</h3>
+                <p>연인이나 깔끔한 동료들과 맥주 한잔하면서 가볍게 노래방 텐션만 즐기고 싶다면? 시설 깨끗하고 가격 저렴한 프리미엄 준코 스타일을 추천해. 안주 리필 필수 알지?</p>
+            </div>
+            <div class="card">
+                <h3>2. 비즈니스 접대/팀 회식형</h3>
+                <p>거래처 접대나 부서 단체 회식 2차라면 고급 룸 가라오케 계열이 정답. 확실하게 룸 크기 널찍하고 서비스 매니저들의 서포트가 탄탄해서 분위기 띄우기에 최고야.</p>
+            </div>
+            <div class="card">
+                <h3>3. 화끈한 남성 소모임형</h3>
+                <p>친한 형 동생들끼리 거침없이 질펀하고 재미있게 달리고 싶다면 무조건 강서 셔츠룸/노래방 코스로 뚫어야지. 확실한 가성비 마인드 덕분에 대만족 보장한다.</p>
+            </div>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 STREET.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
-  </div>
+    </section>
+
+    <section class="reviews-section">
+        <h2>실제 다녀온 발산 직장인들의 리얼 평점</h2>
+        
+        <div class="review-card">
+            <p>"회사 선배들 모시고 발산역 노래방 알아보다가 우연히 전화 드렸는데, 서비스도 엄청 잘 챙겨주시고 룸 퀄리티가 대박이었습니다. 부장님이 술자리 내내 칭찬해주셔서 어깨 뽕 가득 들어갔네요."</p>
+            <div class="review-author">- 마곡 IT업계 박대리 (31세)</div>
+        </div>
+
+        <div class="review-card">
+            <p>"주말이라 예약 힘들 줄 알았는데 너무 매끄럽게 입장시켜 주셨습니다. 정찰제라 안심하고 마실 수 있었고, 술값 추가 장난질 없어서 깔끔했습니다. 단골 확정!"</p>
+            <div class="review-author">- 강서구 주민 최형님 (35세)</div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <h2>발산역 2차 유흥 3대 매뉴얼</h2>
+        <p>첫째, 마곡발산역 중심상가 길거리 삐끼들은 쳐다보지도 마라. 수수료 잔뜩 얹어서 바가지 씌우는 지름길이다. 둘째, 가기 전에 예약 전화는 필수! 미리 상황 파악 안 하고 그냥 돌진했다간 주말 웨이팅만 1시간 넘게 겪다가 흥 다 깨진다. 셋째, 신뢰할 만한 로컬 직통 실장에게 예약하는 게 맥주 한 박스 서비스라도 더 챙기는 비결이다.</p>
+    </section>
+</div>
+
+<footer>
+    <p>상호: 발산 브로 정보 통신 | 대표자: 발산왕</p>
+    <p>문의 직통 전화: <strong>010-6279-0862</strong> (부재 시 문자 필수)</p>
+    <p>&copy; 2026 Balsan Center. All Rights Reserved. 본 사이트는 성인 전용 정보 포털입니다.</p>
+</footer>
+
 </body>
 </html>
