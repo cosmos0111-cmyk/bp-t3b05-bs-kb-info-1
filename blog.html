@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그 - 발산 노래방 정보 | bro's pick</title>
+    <meta name="description" content="발산 노래방 첫 방문? bro가 알려주는 꿀팁 대방출. 가격, 시설, 분위기까지 싹 다 공개. 실제 경험담으로 준비했어.">
+    <meta name="keywords" content="발산 노래방 블로그, 발산 노래방 꿀팁, 발산 노래방 초보, 발산 노래방 후기, bro pick 발산">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <link rel="canonical" href="https://t3b05-bs-kb-info-1.vercel.app/blog">
+    <!-- Open Graph -->
+    <meta property="og:title" content="블로그 - 발산 노래방 정보 | bro's pick">
+    <meta property="og:description" content="발산 노래방 첫 방문? bro가 알려주는 꿀팁 대방출. 가격, 시설, 분위기까지 싹 다 공개. 실제 경험담으로 준비했어.">
+    <meta property="og:url" content="https://t3b05-bs-kb-info-1.vercel.app/blog">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://t3b05-bs-kb-info-1.vercel.app/images/og-blog.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="블로그 - 발산 노래방 정보 | bro's pick">
+    <meta name="twitter:description" content="발산 노래방 첫 방문? bro가 알려주는 꿀팁 대방출.">
+    <!-- CSS 핵심 -->
+    <style>
+        /* ========== RESET & BASE ========== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #f5e6ca; color: #1a1a2e; line-height: 1.6; padding: 0 1rem; }
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3, h4 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
+        h1 { font-size: 3rem; color: #d4af37; text-shadow: 3px 3px 0 #1a1a2e; margin: 2rem 0 1rem; }
+        h2 { font-size: 2rem; color: #1a1a2e; border-left: 8px solid #d4af37; padding-left: 1rem; margin: 2rem 0 1rem; }
+        h3 { font-size: 1.5rem; color: #333; margin: 1.5rem 0 0.8rem; }
+        p, li, blockquote, figcaption { font-size: 1.1rem; margin-bottom: 1rem; }
+        a { color: #d4af37; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.2s; }
+        a:hover { border-bottom-color: #d4af37; color: #b8962e; }
+        strong { color: #c0392b; }
+        /* ========== LAYOUT ========== */
+        .full-bleed { width: 100vw; margin-left: calc(-50vw + 50%); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 1rem; background: #fff9f0; border: 4px solid #1a1a2e; box-shadow: 12px 12px 0 #1a1a2e; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .card { background: #fff; border: 3px solid #1a1a2e; padding: 1.5rem; box-shadow: 6px 6px 0 #1a1a2e; margin-bottom: 2rem; }
+        .card h3 { margin-top: 0; }
+        .card p:last-child { margin-bottom: 0; }
+        /* ========== NAV ========== */
+        nav { background: #1a1a2e; padding: 0.8rem 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav ul li a { color: #f5e6ca; font-weight: bold; text-transform: uppercase; font-size: 1rem; border-bottom: none; }
+        nav ul li a:hover { color: #d4af37; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+        .hamburger span { width: 30px; height: 4px; background: #f5e6ca; margin: 4px 0; }
+        .tel-link { background: #d4af37; color: #1a1a2e !important; padding: 0.4rem 1rem; font-weight: bold; border-radius: 4px; }
+        .tel-link:hover { background: #b8962e; }
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            nav ul { display: none; flex-direction: column; width: 100%; text-align: center; gap: 0.8rem; padding: 1rem 0; }
+            nav ul.open { display: flex; }
+            .hamburger { display: flex; }
+            h1 { font-size: 2.2rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+        /* ========== BLOG SPECIFIC ========== */
+        .blog-post { max-width: 800px; margin: 2rem auto; }
+        .blog-meta { font-style: italic; color: #666; margin-bottom: 2rem; border-bottom: 2px dashed #1a1a2e; padding-bottom: 0.5rem; }
+        blockquote { background: #f0e6d3; border-left: 8px solid #d4af37; padding: 1rem 2rem; margin: 2rem 0; font-style: italic; }
+        .faq-item { border-bottom: 2px solid #1a1a2e; padding: 1rem 0; }
+        .faq-item h4 { cursor: pointer; }
+        .faq-item p { margin: 0.5rem 0 0; }
+        footer { text-align: center; padding: 2rem 0; color: #666; border-top: 4px solid #1a1a2e; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: #d4af37; font-weight: 900; font-size: 1.5rem;">🎤 bro's pick</span>
+        </div>
+        <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </div>
+        <ul>
+            <li><a href="/">홈</a></li>
+            <li><a href="/list">노래방 리스트</a></li>
+            <li><a href="/blog" style="color: #d4af37;">블로그</a></li>
+            <li><a href="/contact">문의</a></li>
+            <li><a href="tel:01062790862" class="tel-link">📞 010-6279-0862</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <article class="blog-post">
+                <h1>발산 노래방 초보자를 위한 완벽 가이드 🎤</h1>
+                <div class="blog-meta">
+                    <span>by bro · 2025.02.20 · 5분 읽기</span>
+                </div>
+
+                <p>야, 발산에서 노래방 한 번 가볼까 생각 중이지? 처음 가는 사람들은 뭘 골라야 할지, 가격은 얼마나 할지 막막할 거야. 나도 처음엔 그랬거든. 그래서 오늘은 <strong>발산 노래방</strong>에서 진짜 재미있게 놀 수 있는 꿀팁을 싹 다 풀어볼게.</p>
+
+                <h2>1. 발산 노래방, 뭐가 다를까?</h2>
+                <p>발산은 원래 노래방 밀집 지역으로 유명해. 근데 문제는 <strong>너무 많아서 고르기 힘들다는 거</strong>ㅋㅋ 내가 직접 10군데 넘게 돌아다니면서 느낀 점은, 가격보다 중요한 게 <strong>시설 상태와 사장님 센스</strong>라는 거야.</p>
+                <blockquote>
+                    "처음 간 노래방에서 마이크에서 잡음 나고, 리모컨 고장나서 10분 날렸어. 그 뒤로는 무조건 후기 확인하고 간다."
+                </blockquote>
+                <p>내가 추천하는 노래방들은 <a href="/list">여기 리스트</a>에 정리해뒀어. 가격, 시설, 분위기까지 싹 비교해봤으니까 한 번 보셈.</p>
+
+                <h2>2. 가격, 얼마나 들까?</h2>
+                <p>발산 노래방 가격대는 보통 <strong>1시간에 1만 원~2만 원</strong> 사이야. 코인노래방은 500원~1000원에 1곡, 가요방은 시간제로 운영되는 곳이 많고. 근데 내 경험상 <strong>2시간 3만 원 이하</strong>면 꽤 괜찮은 곳이야. 음료 서비스나 안주가 포함된 곳도 있으니까 미리 물어보는 게 좋아.</p>
+
+                <h2>3. 실제 가보면 좋은 점 & 아쉬운 점</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>👍 좋았던 점</h3>
+                        <p>사장님이 친절하고, 최신곡 업데이트가 잘 돼 있어. 방음도 좋아서 밤 늦게 가도 민원 걱정 없더라. 그리고 대부분 주차 공간이 있어서 차 가지고 가기도 편해.</p>
+                    </div>
+                    <div class="card">
+                        <h3>👎 아쉬운 점</h3>
+                        <p>인기 있는 곳은 주말에 웨이팅이 있을 수 있어. 그리고 몇몇 곳은 리모컨이 낡았거나 마이크 상태가 별로야. 꼭 <strong>직접 확인</strong>하고 들어가는 걸 추천해.</p>
+                    </div>
+                </div>
+
+                <h2>FAQ - 자주 묻는 질문</h2>
+                <div class="faq-item">
+                    <h4>Q. 발산 노래방 중에 제일 좋은 곳은?</h4>
+                    <p>내가 제일 자주 가는 곳은 <strong>'발산가요방'</strong>이야. 가격도 착하고 시설이 깔끔해. 자세한 후기는 <a href="/list">리스트 페이지</a>에서 확인해줘.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q. 코인노래방 vs 가요방, 뭐가 더 나아?</h4>
+                    <p>혼자나 둘이서 간다면 코인노래방이 좋아. 가격이 저렴하고 부담 없지. 하지만 단체로 가거나 분위기 좋은 곳을 원한다면 가요방이 훨씬 재밌어. 발산에는 둘 다 많으니까 취향에 맞게 골라.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q. 예약해야 하나요?</h4>
+                    <p>주말 저녁에는 예약하는 게 좋아. 특히 인기 있는 곳은 1~2시간 전에 전화해서 자리 있는지 확인하는 걸 추천해. 전화번호는 <a href="tel:01062790862">010-6279-0862</a>로 문의하면 친절하게 알려줘.</p>
+                </div>
+
+                <h2>마무리</h2>
+                <p>발산 노래방, 생각보다 고를 게 많지? 그래도 한 번 가면 또 가고 싶은 곳이니까 이 글 보고 도움 됐으면 좋겠어. 궁금한 점 있으면 언제든 댓글 남겨줘. bro가 직접 답변할게! 🎤</p>
+                <p style="text-align: right; font-weight: bold;">- bro 올림 -</p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 bro's pick · 발산 노래방 정보 · <a href="tel:01062790862">010-6279-0862</a></p>
+    </footer>
+
+    <script>
+        // 햄버거 메뉴 간단 토글
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('open');
+        });
+        // FAQ 클릭 시 토글 (접기/펼치기)
+        document.querySelectorAll('.faq-item h4').forEach(function(item) {
+            item.addEventListener('click', function() {
+                var p = this.nextElementSibling;
+                if (p.style.display === 'none' || p.style.display === '
+</body>
+</html>
